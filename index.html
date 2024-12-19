@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(120deg, rgb(14, 124, 143) , rgb(194, 155, 48), gray);
+      overflow: hidden;
+    }
+    .card{
+        background: linear-gradient(30deg, rgb(97, 0, 199), rgb(55, 1, 112));
+        border-radius: 50px;
+        box-sizing: 0px 10px 30px black;
+        text-align: center;
+        padding: 20px;
+        height: 400px;
+        max-width: 500px;
+        border: 2px solid rgb( 0, 70, 128);
+        animation: fadeIn 1.5s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+    .photo-frame{
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 15px;
+        border: 5px solid #69006c;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: bounce 2s infinite;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .wish-text{
+        font-size: 30px;
+        color: #0ea2e1;
+        font-weight: bold;
+        margin: 30px 0;
+        animation: glow 2s infinite alternate;
+    }
+    .sub-text{
+        font-size: 25px;
+        color: white;
+        margin: 20px;
+        line-height: 30px;
+        text-align: center;
+        animation: slideIn 1s ease-in-out;
+    }
+    .floating-balloons{
+        position: absolute;
+        top:  0;
+        left:  0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    .ballons{
+        position: absolute;
+        width: 30px;
+        height: 40px;
+        background-color: #ff6f6f;
+        border-radius: 50%;
+        bottom: -60px;
+        animation: float 5s ease-in-out infinite;
+    }
+    .ballons:nth-child(2){
+        left: 30%;
+        animation-delay: 2s;
+    }
+    .ballons:nth-child(3){
+        left: 50%;
+        animation-delay: 3s;
+    }
+    .ballons:nth-child(4){
+        left: 70%;
+        animation-delay: 4s;
+    }
+    @keyframes fadeIn{
+        from{opacity: 0; transform: translateY(20px);}
+        to{
+            opacity: 1; transform: translateY(0);
+        }
+    }
+    @keyframes bounce{
+        0%, 100%{transform: translateY(0);}
+        50%{
+            transform: translateY(-10%);
+        }
+    }
+    @keyframes glow{
+        0%{text-shadow: 0 0 5px #61efff;}
+        100%{text-shadow: 0 0 20px #ff61fa;}
+    }
+    @keyframes slideIn{
+        from{transform: translateY(20px);opacity: 0;}
+        to{transform: translateY(0); opacity: 1;}
+    }
+    @keyframes float{
+        0%{transform: translateY(0);}
+        50%{transform: translateY(-200px);}
+        100%{transform: translateY(-400px);}
+    }
+  </style>
+  <body>
+    <div class="card">
+      <div class="photo-frame">
+        <img src="./438f25cb-e96d-4a67-928a-901461046041.png" alt="photo" />
+      </div>
+      <h2 class="wish-text">Happy New Year!</h2>
+      <p class="sub-text">
+        Happy New Year ! Wishing you endless success , boundless joy , and a
+        future as bright as your dreams!
+      </p>
+      <div class="floating-balloons">
+        <div class="ballons" style="background-color: red "></div>
+        <div class="ballons" style="background-color: blue"></div>
+        <div class="ballons" style="background-color: orange"></div>
+        <div class="ballons" style="background-color: green"></div>
+        <div class="ballons" style="background-color: red"></div>
+      </div>
+    </div>
+
+    <!-- script.js -->
+     <script>
+        document.querySelector(".card").addEventListener("click", () =>{
+            const card = document.querySelector(".card");
+            card.style.animation = "none";
+            setTimeout(() =>{
+            },5)
+        });
+     </script>
+  </body>
+</html>
